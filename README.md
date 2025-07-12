@@ -31,7 +31,9 @@ This project runs on **Kaggle** notebooks with the following dependencies:
 ```bash
 pip install ultralytics opencv-python torch
 ```
-
+```bash
+!pip install deep_sort_realtime --quiet
+```
 ---
 
 ## ▶️ How to Run
@@ -56,6 +58,8 @@ pip install ultralytics opencv-python torch
 - **YOLOv11 (Ultralytics)** was used to detect players (`cls == 2`) per frame.
 - Detected bounding boxes were passed to **DeepSORT**, which handles assigning unique IDs and tracking players even when they leave and return to the frame.
 - Only player class was filtered for tracking to avoid ID pollution from referees or balls.
+- The deepsort technique is working for lightweighted version but the full version is not able to detect the players, in my case its the performance of best.pt model
+- try the 3rd code in the ipynb file to get the results, but the results are not as expected
 
 ---
 
